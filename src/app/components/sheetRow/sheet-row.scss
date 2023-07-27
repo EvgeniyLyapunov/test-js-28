@@ -1,41 +1,37 @@
-.header {
+.sheet-row {
   width: 100%;
   height: 54px;
-  background-color: #474955;
   &__row.row {
     height: 100%;
+    padding: 0;
     margin: 0;
+    border-bottom: 1px solid #e3e6ec;
   }
   &__col.col-2 {
     padding: 0;
     width: 10%;
+    border-left: 1px solid #e3e6ec;
+    border-right: 1px solid #e3e6ec;
   }
   &__col.col-6 {
     padding: 0;
     width: 50%;
+    border-right: 1px solid #e3e6ec;
   }
   &__col.col-4 {
     padding: 0;
     width: 40%;
+    border-right: 1px solid #e3e6ec;
   }
-  &__title {
+  &__col-content {
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
-    &-name {
-      margin-right: 35px;
-      color: #fff;
-      font-weight: 500;
-      font-size: 14px;
-    }
-    &-arrow {
-      width: 21px;
-      height: 100%;
-      background: url('../../../assets/icons/shevron-down.svg') center / 21px
-        7px no-repeat;
-    }
   }
+}
+
+div.sheet-row__col.sheet-row__col-one.col-2 {
+  padding: 0;
 }

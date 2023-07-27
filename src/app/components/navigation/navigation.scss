@@ -1,0 +1,25 @@
+.navigation {
+  &__row.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    margin-top: 16px;
+  }
+  &__col.col-2 {
+    padding: 0;
+    display: flex;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 33px;
+  }
+  &__col-rev {
+    margin-left: 60px;
+    justify-content: flex-start;
+  }
+  &__col-next {
+    margin-right: 60px;
+    justify-content: flex-end;
+  }
+}
