@@ -1,0 +1,16 @@
+.item {
+  margin-right: 15px;
+  &:last-child {
+    margin-right: 0;
+  }
+  &__link {
+    font-weight: 700;
+    font-style: italic;
+    font-size: 18px;
+    line-height: 25px;
+    color: #474955;
+    &_active {
+      color: #7ebc3c;
+    }
+  }
+}
