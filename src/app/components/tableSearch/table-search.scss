@@ -1,5 +1,5 @@
 .search {
-  width: 100%;
+  width: 58%;
   height: 52px;
   margin-top: 23px;
   margin-bottom: 15px;
@@ -20,13 +20,6 @@
       color: #b2b7bf;
       font-weight: 400;
       font-size: 14px;
-      transform: translate3d(0, -1px, 0);
-    }
-    &::-webkit-input-placeholder {
-      color: #b2b7bf;
-      font-weight: 400;
-      font-size: 14px;
-      transform: translate3d(0, -1px, 0);
     }
     &:focus {
       outline: none;
@@ -40,5 +33,11 @@
     background-color: transparent;
     background: url('../../../assets/icons/search-icon.svg') center / 21px 21px
       no-repeat;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .search {
+    width: 100%;
   }
 }

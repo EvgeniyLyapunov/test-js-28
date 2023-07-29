@@ -4,6 +4,7 @@ import { IData } from '../../models/models';
 
 interface IMainSlice {
   dataList: IData[];
+  searchList: IData[];
   dataArraysList: IData[][];
   currentSheet: number;
   totalSheets: number;
@@ -16,6 +17,7 @@ interface IMainSlice {
 
 const initialState: IMainSlice = {
   dataList: [],
+  searchList: [],
   dataArraysList: [],
   currentSheet: 1,
   totalSheets: 0,
@@ -42,6 +44,15 @@ const mainSlice = createSlice({
     setNextLink: (state, action: PayloadAction<string>) => {
       state.next = action.payload;
     },
+    sortDataList: (state, action: PayloadAction<IData[]>) => {
+      state.dataList = action.payload;
+    },
+    setSearchList: (state, action: PayloadAction<IData[]>) => {
+      state.searchList = action.payload;
+    },
+    resetSearchList: (state) => {
+      state.searchList = [];
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -66,8 +77,15 @@ const mainSlice = createSlice({
 
 const { actions, reducer } = mainSlice;
 export default reducer;
-export const { setCurrentSheet, setTotalSheets, setPrevLink, setNextLink } =
-  actions;
+export const {
+  setCurrentSheet,
+  setTotalSheets,
+  setPrevLink,
+  setNextLink,
+  sortDataList,
+  setSearchList,
+  resetSearchList,
+} = actions;
 
 function isError(action: AnyAction) {
   return action.type.endsWith('rejected');

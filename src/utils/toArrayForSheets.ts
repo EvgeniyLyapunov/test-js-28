@@ -9,7 +9,7 @@ export const toArrayForSheets = (list: IData[], num: number): IData[][] => {
   const result: IData[][] = [];
   let arr: IData[] = [];
   for (let i = 1; i <= list.length; i++) {
-    if (i % num !== 0) {
+    if (i % num !== 0 && i !== list.length) {
       arr.push(list[i - 1]);
     } else if (i % num === 0 || i === list.length) {
       arr.push(list[i - 1]);

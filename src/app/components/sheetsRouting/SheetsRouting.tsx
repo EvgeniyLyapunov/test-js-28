@@ -1,17 +1,31 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { useAppSelector } from '../../../hooks/reduxHooks';
+import { useAppSelector, useAppDispatch } from '../../../hooks/reduxHooks';
+
+import { setTotalSheets } from '../../../redux/slices/mainSlice';
 
 import { toArrayForSheets } from '../../../utils/toArrayForSheets';
+import { totalSheets } from '../../../utils/totalSheets';
 
 import Sheet from '../sheet/Sheet';
 
 const SheetsRouting: FC = () => {
+  const dispatch = useAppDispatch();
   const dataList = useAppSelector((store) => store.mainSlice.dataList);
+  const searchList = useAppSelector((store) => store.mainSlice.searchList);
+
   const totalRowsInSheet = useAppSelector(
     (store) => store.mainSlice.totalRowsInSheet
   );
-  const sheetsArray = toArrayForSheets(dataList, totalRowsInSheet);
+
+  const sheetsArray =
+    searchList.length > 0
+      ? toArrayForSheets(searchList, totalRowsInSheet)
+      : toArrayForSheets(dataList, totalRowsInSheet);
+
+  useEffect(() => {
+    dispatch(setTotalSheets(sheetsArray.length));
+  }, [sheetsArray]);
 
   const sheets = sheetsArray.map((item, i) => {
     return (

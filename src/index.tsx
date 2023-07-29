@@ -5,7 +5,6 @@ import store from './redux/store';
 
 import App from './app/App';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './style/normalize.scss';
 import './style/fonts.scss';
 import './style/base.scss';

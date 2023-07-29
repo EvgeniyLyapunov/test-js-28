@@ -1,42 +1,52 @@
 .sheet-row {
   width: 100%;
   min-height: 56px;
-  &__row.row {
-    min-height: 56px;
-    padding: 0;
-    margin: 0;
-    border-bottom: 1px solid #e3e6ec;
-  }
-  &__col.col-2 {
-    width: 10%;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e3e6ec;
+  &__col {
+    align-self: stretch;
     padding: 5px 10px;
-    border-left: 1px solid #e3e6ec;
-    border-right: 1px solid #e3e6ec;
-  }
-  &__col.col-6 {
-    width: 50%;
-    padding: 5px 10px;
-    border-right: 1px solid #e3e6ec;
-  }
-  &__col.col-4 {
-    width: 40%;
-    padding: 5px 10px;
-    border-right: 1px solid #e3e6ec;
-  }
-  &__col-content {
-    width: 100%;
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     font-weight: 500;
     font-size: 13px;
-    &_center {
+    &-id {
+      width: 10%;
       justify-content: center;
+      border-left: 1px solid #e3e6ec;
+      border-right: 1px solid #e3e6ec;
+    }
+    &-title {
+      width: 50%;
+      border-right: 1px solid #e3e6ec;
+    }
+    &-descr {
+      width: 40%;
+      border-right: 1px solid #e3e6ec;
     }
   }
 }
 
-div.sheet-row__col.sheet-row__col-one.col-2 {
-  padding: 0;
+@media (max-width: 991.98px) {
+  .sheet-row {
+    &__col {
+      &-title {
+        width: 30%;
+      }
+      &-descr {
+        width: 60%;
+      }
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  .sheet-row {
+    &__col {
+      font-weight: 400;
+      font-size: 12px;
+    }
+  }
 }

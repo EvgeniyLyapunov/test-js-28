@@ -1,32 +1,15 @@
 .header {
   width: 100%;
   height: 54px;
+  display: flex;
+  align-items: center;
   background-color: #474955;
-  &__row.row {
-    height: 100%;
-    margin: 0;
-  }
-  &__col.col-2 {
-    padding: 0;
-    width: 10%;
-  }
-  &__col.col-6 {
-    padding: 0;
-    width: 50%;
-  }
-  &__col.col-4 {
-    padding: 0;
-    width: 40%;
-  }
-  &__title {
-    width: 100%;
+  &__section {
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
     cursor: pointer;
     &-name {
-      margin-right: 35px;
       color: #fff;
       font-weight: 500;
       font-size: 14px;
@@ -36,6 +19,69 @@
       height: 100%;
       background: url('../../../assets/icons/shevron-down.svg') center / 21px
         7px no-repeat;
+    }
+  }
+  &__id {
+    width: 10%;
+    justify-content: center;
+    &-name {
+      margin-right: 39px;
+    }
+  }
+  &__title {
+    width: 50%;
+    &-name {
+      margin-left: 125px;
+      margin-right: 34px;
+    }
+  }
+  &__descr {
+    width: 40%;
+    &-name {
+      margin-left: 121px;
+      margin-right: 25px;
+    }
+  }
+}
+
+@media (max-width: 991.98px) {
+  .header {
+    &__section {
+      justify-content: center;
+    }
+    &__id {
+      &-name {
+        margin-right: 7%;
+      }
+    }
+    &__title {
+      width: 30%;
+      &-name {
+        margin-left: unset;
+        margin-right: 7%;
+      }
+    }
+    &__descr {
+      width: 60%;
+      &-name {
+        margin-left: unset;
+        margin-right: 7%;
+      }
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  .header {
+    &__section {
+      &-name {
+        color: #fff;
+        font-weight: 500;
+        font-size: 13px;
+      }
+      &-arrow {
+        display: none;
+      }
     }
   }
 }
